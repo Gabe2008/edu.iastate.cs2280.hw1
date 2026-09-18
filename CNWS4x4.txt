@@ -1,0 +1,5 @@
+4 4
+E E E E
+E S C E
+E E E E
+E E E E
