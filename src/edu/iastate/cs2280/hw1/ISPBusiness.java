@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * @author <<Write your name here>>
+ * @author Gabriel Vesperman
  *
  * The ISPBusiness class performs simulation over a grid 
  * plain with cells occupied by different TownCell types.

@@ -1,5 +1,7 @@
 package edu.iastate.cs2280.hw1;
-
+/**
+ * @author Gabriel Vesperman
+ */
 public class Streamer extends TownCell {
 
     public Streamer(Town p, int r, int c) {

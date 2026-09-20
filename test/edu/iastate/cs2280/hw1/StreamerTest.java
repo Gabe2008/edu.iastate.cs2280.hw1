@@ -11,16 +11,16 @@ class StreamerTest {
     @Test
     void who() {
         Town town = new Town(3, 3);
-        Casual casual = new Casual(town, 1, 1);
+        Streamer cell = new Streamer(town, 1, 1);
 
-        assertEquals(State.CASUAL, casual.who());
+        assertEquals(State.STREAMER, cell.who());
     }
 
     @Test
     void testToString() {
         Town town = new Town(3, 3);
-        Casual casual = new Casual(town, 1, 1);
-        assertEquals("C", casual.toString());
+        Streamer cell = new Streamer(town, 1, 1);
+        assertEquals("S", cell.toString());
     }
 
     @Test

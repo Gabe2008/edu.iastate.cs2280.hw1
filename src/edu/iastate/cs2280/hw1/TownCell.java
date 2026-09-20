@@ -2,7 +2,7 @@ package edu.iastate.cs2280.hw1;
 
 /**
  * 
- * @author <<Write your name here>>
+ * @author Gabriel Vesperman
  *	Also provide appropriate comments for this class
  *
  */

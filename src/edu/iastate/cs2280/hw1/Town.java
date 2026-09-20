@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 
 /**
- *  @author <<Write your name here>>
+ *  @author Gabriel Vesperman
  *
  */
 public class Town {

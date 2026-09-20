@@ -1,5 +1,9 @@
 package edu.iastate.cs2280.hw1;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 public class Casual extends TownCell {
 
     public Casual(Town p, int r, int c) {
