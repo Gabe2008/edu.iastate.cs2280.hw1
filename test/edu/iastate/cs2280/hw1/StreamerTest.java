@@ -27,7 +27,7 @@ class StreamerTest {
     void nextWithReseller() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Streamer6x6.txt");
+            town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -41,7 +41,7 @@ class StreamerTest {
     void nextWithOutage() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Streamer6x6.txt");
+            town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -55,7 +55,7 @@ class StreamerTest {
     void nextWithFewEmptyOutage() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Streamer6x6.txt");
+            town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -69,7 +69,7 @@ class StreamerTest {
     void nextWithFiveCasual() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Streamer6x6.txt");
+            town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -83,7 +83,7 @@ class StreamerTest {
     void nextUnchanged() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Streamer3x3.txt");
+            town = new Town("Streamer3x3.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;

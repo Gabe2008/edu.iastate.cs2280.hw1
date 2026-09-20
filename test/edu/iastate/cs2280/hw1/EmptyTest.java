@@ -20,7 +20,7 @@ class EmptyTest {
     void nextWithFewEmptyOutage() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Test1.txt");
+            town = new Town("Test1.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -34,7 +34,7 @@ class EmptyTest {
     void nextUnchanged() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Test3.txt");
+            town = new Town("Test3.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;

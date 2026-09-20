@@ -12,7 +12,7 @@ class ISPBusinessTest {
     void updatePlain() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\ISP4x4.txt");
+            town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -20,7 +20,7 @@ class ISPBusinessTest {
 
         Town town2;
         try {
-            town2 = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\ISP4x4_2.txt");
+            town2 = new Town("ISP4x4_2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -35,7 +35,7 @@ class ISPBusinessTest {
     void getProfit() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\ISP4x4.txt");
+            town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;

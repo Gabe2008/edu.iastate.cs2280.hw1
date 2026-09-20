@@ -12,7 +12,7 @@ class TownCellTest {
     void census() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\ISP4x4.txt");
+            town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
