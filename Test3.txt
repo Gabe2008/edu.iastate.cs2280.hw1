@@ -6,6 +6,6 @@ E E E E E E E E E E
 E E E E E E E E E E
 E E E E E E E E E E
 E E E E E E E E E E
-E E E E E E E E E E
-E E E E E E E E E E
-E E E E E E E E E E
+E E O E E E E E E E
+C R O E E E E E E E
+C C C E E E E E E E

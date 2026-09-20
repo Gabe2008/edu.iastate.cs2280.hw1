@@ -30,15 +30,6 @@ public abstract class TownCell {
 		row = r;
 		col = c;
 	}
-
-	/**
-	 * Sets plain to a new Town
-	 * Might not need idk rn
-	 * @param p
-	 */
-	public void setPlain(Town p) {
-		plain = p;
-	}
 	
 	/**
 	 * Checks all neigborhood cell types in the neighborhood.
