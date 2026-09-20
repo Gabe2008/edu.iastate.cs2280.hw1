@@ -60,6 +60,6 @@ class TownTest {
                 "E E C O \n" +
                 "E S O S \n" +
                 "E O R R \n";
-        assertEquals(town.toString(), expected);
+        assertEquals(expected, town.toString());
     }
 }

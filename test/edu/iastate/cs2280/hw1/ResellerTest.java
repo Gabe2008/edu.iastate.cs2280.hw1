@@ -20,7 +20,7 @@ class ResellerTest {
     void nextWithLessThanFourCasual() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Test2.txt");
+            town = new Town("Test2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -34,7 +34,7 @@ class ResellerTest {
     void nextWithThreeOrMoreEmpty() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Test2.txt");
+            town = new Town("Test2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
@@ -48,7 +48,7 @@ class ResellerTest {
     void nextWithFiveCasual() {
         Town town;
         try {
-            town = new Town("C:\\Users\\gabri\\Desktop\\edu.iastate.cs2280.hw1\\Test2.txt");
+            town = new Town("Test2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             return;
