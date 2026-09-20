@@ -1,7 +1,7 @@
 10 10
-C C E E E E E E E E
-C C E E E E E E E E
-E E E E E E E E E E
+C C E C C C E E E E
+C C E C E O E E E E
+E E E C C C E E E E
 E E E E E E E E E E
 E E E E E E E E E E
 E E E E E E E E E E
