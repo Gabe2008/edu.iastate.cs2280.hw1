@@ -75,7 +75,7 @@ public class ISPBusiness {
 		if(args.length==0) {
 			sc = new Scanner(System.in);
 		} else {
-			sc = new Scanner(Arrays.toString(args));
+			sc = new Scanner(String.join(" ", args));
 		}
 		System.out.println("How to populate grid (type 1 or 2): 1: from a file. 2: randomly with seed");
 		int option1;

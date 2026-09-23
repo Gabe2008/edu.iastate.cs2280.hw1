@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ISPBusinessTest {
 
-    /*@Test
+    @Test
     void mainFile() {
         String[] args = new String[] { "1", "ISP4x4.txt" };
         assertDoesNotThrow(() -> {
@@ -26,7 +26,7 @@ class ISPBusinessTest {
         assertDoesNotThrow(() -> {
             ISPBusiness.main(args);
         });
-    }*/
+    }
 
     @Test
     void updatePlain() {
