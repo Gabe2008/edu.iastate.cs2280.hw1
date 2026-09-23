@@ -2,13 +2,12 @@ package edu.iastate.cs2280.hw1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 
 /**
- *  @author Gabriel Vesperman
+ *  @author <<Write your name here>>
  *
  */
 public class Town {
@@ -24,9 +23,6 @@ public class Town {
 	 */
 	public Town(int length, int width) {
 		//TODO: Write your code here.
-		this.length = length;
-		this.width = width;
-		grid = new TownCell[this.length][this.width];
 	}
 	
 	/**
@@ -38,48 +34,6 @@ public class Town {
 	 */
 	public Town(String inputFileName) throws FileNotFoundException {
 		//TODO: Write your code here.
-		Scanner sc = new Scanner(new File(inputFileName));
-		try {
-			length = sc.nextInt();
-			width = sc.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("Grid dimensions not formatted correctly.");
-			sc.close();
-			return;
-		}
-		grid = new TownCell[length][width];
-
-		for(int row = 0; row < length; row++){
-			for(int col = 0; col < width; col++){
-				char cell;
-				try {
-					cell = sc.next().charAt(0);
-				} catch (InputMismatchException e) {
-					System.out.println("Grid not formatted correctly.");
-					sc.close();
-					return;
-				}
-				if (cell == 'C'){
-					grid[row][col] = new Casual(this ,row, col);
-				} else
-				if (cell == 'E'){
-					grid[row][col] = new Empty(this ,row, col);
-				} else
-				if (cell == 'O'){
-					grid[row][col] = new Outage(this ,row, col);
-				} else
-				if (cell == 'R'){
-					grid[row][col] = new Reseller(this ,row, col);
-				} else
-				if (cell == 'S'){
-					grid[row][col] = new Streamer(this ,row, col);
-				} else {
-					throw new CellTypeException("Wrong cell type");
-				}
-			}
-		}
-
-		sc.close();
 	}
 	
 	/**
@@ -88,7 +42,7 @@ public class Town {
 	 */
 	public int getWidth() {
 		//TODO: Write/update your code here.
-		return width;
+		return 0;
 	}
 	
 	/**
@@ -97,7 +51,7 @@ public class Town {
 	 */
 	public int getLength() {
 		//TODO: Write/update your code here.
-		return length;
+		return 0;
 	}
 
 	/**
@@ -107,29 +61,6 @@ public class Town {
 	public void randomInit(int seed) {
 		Random rand = new Random(seed);
 		//TODO: Write your code here.
-		for (int i = 0; i < length; i++) {
-			for (int j = 0; j < width; j++) {
-				int type = rand.nextInt(5);
-				if (type == TownCell.CASUAL){
-					grid[i][j] = new Casual(this, i, j);
-				} else
-				if (type == TownCell.STREAMER){
-					grid[i][j] = new Streamer(this, i, j);
-				} else
-				if (type == TownCell.RESELLER){
-					grid[i][j] = new Reseller(this, i, j);
-				} else
-				if (type == TownCell.EMPTY){
-					grid[i][j] = new Empty(this, i, j);
-				} else
-				if (type == TownCell.OUTAGE){
-					grid[i][j] = new Outage(this, i, j);
-				} else {
-					grid[i][j] = new Empty(this, i, j);
-					System.out.println("Fix random number");
-				}
-			}
-		}
 	}
 	
 	/**
@@ -142,13 +73,6 @@ public class Town {
 	public String toString() {
 		String s = "";
 		//TODO: Write your code here.
-		for(TownCell[] row: grid){
-			for(TownCell cell: row){
-				s+= cell.toString()+" ";
-			}
-			s+= "\n";
-		}
-
 		return s;
 	}
 }
