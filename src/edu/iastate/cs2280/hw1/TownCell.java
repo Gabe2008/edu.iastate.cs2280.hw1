@@ -2,7 +2,7 @@ package edu.iastate.cs2280.hw1;
 
 /**
  * 
- * @author Gabriel Vesperman
+ * @author <<Write your name here>>
  *	Also provide appropriate comments for this class
  *
  */
@@ -48,33 +48,6 @@ public abstract class TownCell {
 		nCensus[STREAMER] = 0; 
 
 		//TODO: Write your code here.
-		for(int i = -1; i<=1; i++) {
-			for(int j = -1; j<=1; j++) {
-				if(i+row >= 0
-						&& i+row < plain.getLength()
-						&& j+col >= 0
-						&& j+col < plain.getWidth()
-						&& (i != 0 || j != 0)) {
-					State state = plain.grid[i+row][j+col].who();
-
-					if (state == State.RESELLER) {
-						nCensus[RESELLER]++;
-					}
-					else if (state == State.EMPTY) {
-						nCensus[EMPTY]++;
-					}
-					else if (state == State.CASUAL) {
-						nCensus[CASUAL]++;
-					}
-					else if (state == State.OUTAGE) {
-						nCensus[OUTAGE]++;
-					}
-					else if (state == State.STREAMER) {
-						nCensus[STREAMER]++;
-					}
-				}
-			}
-		}
 
 	}
 
