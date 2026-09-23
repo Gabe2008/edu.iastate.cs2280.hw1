@@ -1,11 +1,9 @@
 package edu.iastate.cs2280.hw1;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * @author Gabriel Vesperman
+ * @author <<Write your name here>>
  *
  * The ISPBusiness class performs simulation over a grid 
  * plain with cells occupied by different TownCell types.
@@ -21,11 +19,6 @@ public class ISPBusiness {
 	public static Town updatePlain(Town tOld) {
 		Town tNew = new Town(tOld.getLength(), tOld.getWidth());
 		//TODO: Write your code here.
-		for (int i = 0; i < tOld.getLength(); i++) {
-			for (int j = 0; j < tOld.getWidth(); j++) {
-				tNew.grid[i][j] = tOld.grid[i][j].next(tNew);
-			}
-		}
 		return tNew;
 	}
 	
@@ -36,15 +29,7 @@ public class ISPBusiness {
 	 */
 	public static int getProfit(Town town) {
 		//TODO: Write/update your code here.
-		int profit = 0;
-		for(int i = 0; i<town.getLength(); i++) {
-			for(int j = 0; j<town.getWidth(); j++) {
-				if(town.grid[i][j].who() == State.CASUAL){
-					profit+=1;
-				}
-			}
-		}
-		return profit;
+		return 0;
 	}
 	
 
@@ -70,65 +55,5 @@ public class ISPBusiness {
 	 */
 	public static void main(String []args) {
 		//TODO: Write your code here.
-		Town town;
-		Scanner sc;
-		if(args.length==0) {
-			sc = new Scanner(System.in);
-		} else {
-			sc = new Scanner(Arrays.toString(args));
-		}
-		System.out.println("How to populate grid (type 1 or 2): 1: from a file. 2: randomly with seed");
-		int option1;
-		try{
-			option1 = sc.nextInt();
-		} catch(InputMismatchException e){
-			System.out.println("Invalid Input");
-			sc.close();
-			return;
-		}
-		if(option1==1){
-			System.out.println("Please enter file path:");
-			try {
-				town = new Town(sc.next());
-			} catch (FileNotFoundException e) {
-				System.out.println("File not found.");
-				sc.close();
-				return;
-			} catch (CellTypeException e) {
-				System.out.println(e.getMessage());
-				sc.close();
-				return;
-			}
-		} else if(option1==2){
-			System.out.println("Provide rows, cols and seed integer separated by spaces: ");
-			try {
-				int rows = sc.nextInt();
-				int cols = sc.nextInt();
-				int seed = sc.nextInt();
-				town = new Town(rows, cols);
-				town.randomInit(seed);
-			} catch(InputMismatchException e) {
-				System.out.println("Wrong input format.");
-				sc.close();
-				return;
-			}
-		} else {
-			System.out.println("Invalid option.");
-			sc.close();
-			return;
-		}
-		sc.close();
-		int profit = 0;
-
-		for(int i = 0; i<12; i++) {
-			town = updatePlain(town);
-			profit+=getProfit(town);
-		}
-
-		double maxProfit = town.getLength() * town.getWidth() * 12.0;
-		double profitPercentage = 100.0 * profit / maxProfit;
-
-		System.out.printf("%.2f%%%n", profitPercentage);
-		return;
 	}
 }
