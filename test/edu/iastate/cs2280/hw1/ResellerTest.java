@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 class ResellerTest {
 
     @Test
@@ -23,6 +27,7 @@ class ResellerTest {
             town = new Town("Test2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[8][7].next(new Town(town.getLength(), town.getWidth()));
@@ -37,6 +42,7 @@ class ResellerTest {
             town = new Town("Test2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[8][4].next(new Town(town.getLength(), town.getWidth()));
@@ -51,6 +57,7 @@ class ResellerTest {
             town = new Town("Test2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[8][1].next(new Town(town.getLength(), town.getWidth()));
@@ -65,6 +72,7 @@ class ResellerTest {
             town = new Town("Test3.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
 

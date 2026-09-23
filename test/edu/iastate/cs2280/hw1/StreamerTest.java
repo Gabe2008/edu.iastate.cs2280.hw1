@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 class StreamerTest {
 
     @Test
@@ -30,6 +34,7 @@ class StreamerTest {
             town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[1][1].next(new Town(town.getLength(), town.getWidth()));
@@ -44,6 +49,7 @@ class StreamerTest {
             town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[1][4].next(new Town(town.getLength(), town.getWidth()));
@@ -58,6 +64,7 @@ class StreamerTest {
             town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[4][1].next(new Town(town.getLength(), town.getWidth()));
@@ -72,6 +79,7 @@ class StreamerTest {
             town = new Town("Streamer6x6.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[4][4].next(new Town(town.getLength(), town.getWidth()));
@@ -86,6 +94,7 @@ class StreamerTest {
             town = new Town("Streamer3x3.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         TownCell nextCell = town.grid[1][1].next(new Town(town.getLength(), town.getWidth()));

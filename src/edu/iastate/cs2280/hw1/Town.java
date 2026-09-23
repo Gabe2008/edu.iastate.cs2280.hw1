@@ -24,8 +24,8 @@ public class Town {
 	 */
 	public Town(int length, int width) {
 		//TODO: Write your code here.
-		this.length = Math.abs(length);
-		this.width = Math.abs(width);
+		this.length = length;
+		this.width = width;
 		grid = new TownCell[this.length][this.width];
 	}
 	
@@ -61,18 +61,20 @@ public class Town {
 				}
 				if (cell == 'C'){
 					grid[row][col] = new Casual(this ,row, col);
-				}
+				} else
 				if (cell == 'E'){
 					grid[row][col] = new Empty(this ,row, col);
-				}
+				} else
 				if (cell == 'O'){
 					grid[row][col] = new Outage(this ,row, col);
-				}
+				} else
 				if (cell == 'R'){
 					grid[row][col] = new Reseller(this ,row, col);
-				}
+				} else
 				if (cell == 'S'){
 					grid[row][col] = new Streamer(this ,row, col);
+				} else {
+					throw new CellTypeException("Wrong cell type");
 				}
 			}
 		}

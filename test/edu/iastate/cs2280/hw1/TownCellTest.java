@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 class TownCellTest {
 
     @Test
@@ -15,6 +19,7 @@ class TownCellTest {
             town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
 

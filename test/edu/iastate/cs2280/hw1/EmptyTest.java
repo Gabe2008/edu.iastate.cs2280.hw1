@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 class EmptyTest {
 
     @Test

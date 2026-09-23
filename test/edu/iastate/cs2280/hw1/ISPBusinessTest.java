@@ -6,7 +6,27 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 class ISPBusinessTest {
+
+    /*@Test
+    void mainFile() {
+        String[] args = new String[] { "1", "ISP4x4.txt" };
+        assertDoesNotThrow(() -> {
+            ISPBusiness.main(args);
+        });
+    }
+
+    @Test
+    void mainRandom() {
+        String[] args = new String[] { "2", "4 4 10" };
+        assertDoesNotThrow(() -> {
+            ISPBusiness.main(args);
+        });
+    }*/
 
     @Test
     void updatePlain() {
@@ -15,6 +35,7 @@ class ISPBusinessTest {
             town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
 
@@ -23,12 +44,13 @@ class ISPBusinessTest {
             town2 = new Town("ISP4x4_2.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
 
         Town nextTown = ISPBusiness.updatePlain(town);
 
-        assertEquals(nextTown.toString(), town2.toString());
+        assertEquals(town2.toString(), nextTown.toString());
     }
 
     @Test
@@ -38,6 +60,7 @@ class ISPBusinessTest {
             town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
 

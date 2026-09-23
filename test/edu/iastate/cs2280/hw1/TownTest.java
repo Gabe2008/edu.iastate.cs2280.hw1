@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Gabriel Vesperman
+ */
+
 class TownTest {
 
     @Test
@@ -47,12 +51,55 @@ class TownTest {
     }
 
     @Test
+    void fileInit(){
+        Town t;
+        try {
+            t = new Town("ISP4x4.txt");
+        } catch (FileNotFoundException e) {
+            fail("Required test file was not found", e);
+            return;
+        }
+
+        assertEquals(State.OUTAGE, t.grid[0][0].who());
+        assertEquals(State.RESELLER, t.grid[0][1].who());
+        assertEquals(State.OUTAGE, t.grid[0][2].who());
+        assertEquals(State.RESELLER, t.grid[0][3].who());
+
+        assertEquals(State.EMPTY, t.grid[1][0].who());
+        assertEquals(State.EMPTY, t.grid[1][1].who());
+        assertEquals(State.CASUAL, t.grid[1][2].who());
+        assertEquals(State.OUTAGE, t.grid[1][3].who());
+
+        assertEquals(State.EMPTY, t.grid[2][0].who());
+        assertEquals(State.STREAMER, t.grid[2][1].who());
+        assertEquals(State.OUTAGE, t.grid[2][2].who());
+        assertEquals(State.STREAMER, t.grid[2][3].who());
+
+        assertEquals(State.EMPTY, t.grid[3][0].who());
+        assertEquals(State.OUTAGE, t.grid[3][1].who());
+        assertEquals(State.RESELLER, t.grid[3][2].who());
+        assertEquals(State.RESELLER, t.grid[3][3].who());
+    }
+
+    @Test
+    void fileNotFoundInit(){
+        Town t;
+        try {
+            t = new Town("null");
+            fail("Required test file was not found");
+        } catch (FileNotFoundException e) {
+            return;
+        }
+    }
+
+    @Test
     void testToString() {
         Town town;
         try {
             town = new Town("ISP4x4.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
+            fail("Required test file was not found", e);
             return;
         }
         String expected =

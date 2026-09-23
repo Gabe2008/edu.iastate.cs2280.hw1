@@ -1,5 +1,6 @@
 package edu.iastate.cs2280.hw1;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -70,9 +71,13 @@ public class ISPBusiness {
 	public static void main(String []args) {
 		//TODO: Write your code here.
 		Town town;
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println("1 - File\n2 - Random");
+		Scanner sc;
+		if(args.length==0) {
+			sc = new Scanner(System.in);
+		} else {
+			sc = new Scanner(Arrays.toString(args));
+		}
+		System.out.println("How to populate grid (type 1 or 2): 1: from a file. 2: randomly with seed");
 		int option1;
 		try{
 			option1 = sc.nextInt();
@@ -82,16 +87,20 @@ public class ISPBusiness {
 			return;
 		}
 		if(option1==1){
-			System.out.println("File path:");
+			System.out.println("Please enter file path:");
 			try {
 				town = new Town(sc.next());
 			} catch (FileNotFoundException e) {
 				System.out.println("File not found.");
 				sc.close();
 				return;
+			} catch (CellTypeException e) {
+				System.out.println(e.getMessage());
+				sc.close();
+				return;
 			}
-		} else {
-			System.out.println("Rows Cols Seed");
+		} else if(option1==2){
+			System.out.println("Provide rows, cols and seed integer separated by spaces: ");
 			try {
 				int rows = sc.nextInt();
 				int cols = sc.nextInt();
@@ -103,6 +112,10 @@ public class ISPBusiness {
 				sc.close();
 				return;
 			}
+		} else {
+			System.out.println("Invalid option.");
+			sc.close();
+			return;
 		}
 		sc.close();
 		int profit = 0;
